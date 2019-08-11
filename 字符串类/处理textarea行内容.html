@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<textarea id="txt"></textarea>
+	<button id="btn">点击</button>
+	<script>
+		var oTxt=document.getElementById('txt')
+		var oBtn=document.getElementById('btn')
+		oBtn.onclick=function(){
+			var lines=oTxt.value.split('\n').map((item)=>item.trim())
+			console.log(lines)
+		}
+	</script>
+</body>
+</html>

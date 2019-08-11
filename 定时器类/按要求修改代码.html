@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//源代码
+		// for(var i=1;i<=5;i++){
+		// 	setTimeout(function timer(){
+		// 		console.log(i);
+		// 	},i*1000);
+			
+		// }
+		// 为什么都是6  循环结束后 i 变成6  setTimeout是在循环完成之后持行的
+
+		// 问题 1 2 3 4 5  解决方案2种
+
+		// 第一种解决方案：
+		// for(var i=1;i<=5;i++){
+		// 	(function(j){
+		// 		setTimeout(function timer(){
+		//  			console.log(j);
+		//  		},j*1000);
+		// 	})(i)
+		// }
+
+		// 第二种解决方案：es6 块级作用域  let
+		for(let i=1;i<=5;i++){
+			setTimeout(function timer(){
+				console.log(i);
+			},i*1000);
+		}
+	</script>
+</body>
+</html>

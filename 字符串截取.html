@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var path='https://github.com/woshiade/mydemo/blob/master/字符串截取.html'
+		// 拿到点的位置
+		// var pos =path.indexOf('.')
+		var pos=path.lastIndexOf('.')
+
+		alert(pos)
+		// 字符串截取  str.substr()
+		var filetype = path.substr(pos)
+		alert(filetype)
+	</script>
+</body>
+</html>

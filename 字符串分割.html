@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul></ul>
+	<script>
+		var input=prompt('请输入相关名字，用逗号隔开')
+		// 张三，李四
+		// console.log(input)
+		var arr = input.split('，')
+		var li=''
+		for(var i=0;len=arr.length,i<len;i++){
+			li+='<li>'+arr[i]+'</li>'
+		}
+		var oUl=document.getElementsByTagName('ul')[0]
+		oUl.innerHTML=li
+	</script>
+</body>
+</html>

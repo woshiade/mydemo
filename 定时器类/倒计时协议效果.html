@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 400px;
+			height: 300px;
+			margin: 50px auto;
+			border: 1px solid black;
+		}
+		#content{
+			height: 260px;
+		}
+		#box p{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="content">协议内容：xxxxxx</div>
+		<p>
+			<button id="btn">阅读5秒后同意</button>
+		</p>
+	</div>
+	<script>
+		var oBtn=document.getElementById('btn')
+		var num=5
+		var timmer=null
+		timmer= setInterval(function(){
+			num--
+			if(num<=0){
+				// btn变成同意
+				oBtn.innerText='同意'
+				clearInterval(timmer)
+				oBtn.removeAttribute('disabled')
+				return
+			}
+			oBtn.innerText='阅读'+num+'秒后同意'
+			oBtn.setAttribute('disabled','disabled')
+		},1000)
+	</script>
+</body>
+</html>

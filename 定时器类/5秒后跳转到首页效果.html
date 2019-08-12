@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1 id="h1">5秒后跳转到首页</h1>
+	<script>
+		var oH1=document.getElementById('h1')
+		var num=5
+		setInterval(function(){
+			num--
+			// 跳转
+			if(num<=0){
+				window.location.href='http://nodeing.com'
+			}
+			oH1.innerText=num+'秒后跳转到首页'
+		},1000)
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">开始</button>
+	<h2 id="showTime"></h2>
+	<script>
+		var oBtn=document.getElementById('btn')
+		var oShowtime=document.getElementById('showTime')
+		oBtn.onclick=function(){
+			showTime()
+		}
+		function showTime(){
+			var date = new Date()
+			// 年月日  时分秒
+			var y=date.getFullYear()
+			var m=date.getMonth()+1
+			var d=date.getDate()
+			var h=date.getHours()
+			var i=date.getMinutes()
+			var s=date.getSeconds()
+			oShowtime.innerText=y+'年'+m+'月'+d+'日  '+h+':'+i+':'+s	
+			setTimeout(showTime,1000)
+		}
+	</script>
+</body>
+</html>

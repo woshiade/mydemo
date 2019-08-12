@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	单价：<span>￥19.8元</span> 商品数量：<input type="text"> 总价：<input type="text"> <button id="btn">计算</button>
+	<script>
+		var oSpan=document.getElementsByTagName('span')[0]
+		var aInput=document.getElementsByTagName('input')
+		var oBtn=document.getElementById('btn')
+		oBtn.onclick=function(){
+			// 拿到单价  ￥19.8元 -> 19.8
+			var price=oSpan.innerText.substr(1)
+			// 拿到商品数量
+			var num =aInput[0].value
+			var total= parseFloat(price)*num
+			// toFixed  不精确
+			aInput[1].value=total.toFixed(2)
+			// 搜索相关的toFixed库了解
+		}
+	</script>
+</body>
+</html>

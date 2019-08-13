@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//1
+		var arr=[1,2,3]
+		var arr2=arr
+		arr2.push(4)
+		console.log(arr2,arr)  //arr2 ?  arr ?
+		// 答案：arr2=[1,2,3,4]  arr=[1,2,3,4]
+
+		// 2
+		var arr=[1,2,3]
+		var arr2 =arr
+		arr2=[1,2,3,4]
+		console.log(arr)  //arr ?
+		console.log(arr2) //arr2 ?
+		// 答案：arr2=[1,2,3,4]  arr=[1,2,3]
+	</script>
+</body>
+</html>

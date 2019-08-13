@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr=[2,3,4,3,6,8,4]
+		// 步骤 1 先定义一个空数组  不会重复的res=[]  2 循环arr  把没有重复的放到res数组中  [2,3,4,6,8]
+		// var res=[]
+		// for(var i=0;i<arr.length;i++){
+		// 	if(res.indexOf(arr[i])===-1){
+		// 		res.push(arr[i])
+		// 	}
+		// }
+		// console.log(res)
+
+		//es6  Set方法  不重复
+		var s = new Set(arr)
+		console.log(s)
+		// 把集合装换成数组
+		console.log(Array.from(s))
+	</script>
+</body>
+</html>

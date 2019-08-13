@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//勾股定理  Math.pow(c,2) = Math.pow(a,2) +  Math.pow(b,2)
+		// a*a
+		// alert(Math.pow(3,2)+Math.pow(4,2))
+		function fc(a,b){
+			// return Math.sqrt(Math.pow(a,2) +  Math.pow(b,2))
+			if(a<=0||b<=0){
+				//抛出错误
+				throw'参数不能为负数或者0'
+			}
+			return Math.sqrt(a*a+b*b) 
+		}
+		alert(fc(-1,4))
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//随机数  Math.random()   [0-1]   求n-m之间的随机数
+		//10-30的随机数  --> 0-30
+		for(var i=0;i<30;i++){
+			// console.log(Math.floor(Math.random()*(30-10+1)+10))
+			console.log(getRandom(10,30))
+		}
+		function getRandom(min,max){
+			// if(min>max){
+			// 	return Math.floor(Math.random()*(min-max+1)+max)
+			// }
+			return Math.floor(Math.random()*(max-min+1)+min)
+		}
+	</script>
+</body>
+</html>

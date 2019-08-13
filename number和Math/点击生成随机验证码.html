@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">生成验证码</button>
+	<input type="text" id="ipt">
+	<script>
+		var oIpt=document.getElementById('ipt')
+		var oBtn=document.getElementById('btn')
+		oBtn.onclick=function(){
+			oIpt.value=generate_code(4)
+		}
+		function generate_code(len){
+			//验证码
+			var dict ='0123456789abcdefghijklmnopqsrtuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+			var code=''
+			for(var i=0;i<len;i++){
+				code+=dict[Math.floor(Math.random()*62)]
+			}
+			return code
+		}
+	</script>
+</body>
+</html>

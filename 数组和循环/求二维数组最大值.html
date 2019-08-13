@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//求一个二维正整数数组中的最大值
+		var arr=[
+			[4,9,7,3],
+			[14,25,6,8],
+			[54,98,32,5]
+		]
+		//思路：1.找到二维数组的每个数字   2.做比较
+		// 比如：有60人 如何去找到身高最高的人  1.默认第一个人是最高的  站在pk台上和第二人比较，谁高谁留
+		var maxValue=arr[0][0]
+		for(var i=0;i<arr.length;i++){
+			// arr[i] 是第一个数组
+			for(var j=0;j<arr[i].length;j++){
+				// 每个元素 arr[i][j]
+				// console.log(arr[i][j])
+				if(arr[i][j]>maxValue){
+					maxValue=arr[i][j]
+				}
+			}
+		}
+		console.log(maxValue)
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//检测三角形
+		function check_triangle(a,b,c){
+			// 可以把a，b，c进行排序得到一个数组 arr=[a,b,c]  最后一个为最大
+			// arguments.sort()
+			// arguments 是一个参数对象，传入的参数都放在这个对象里  类数组 不是真正的数组 没有sort方法
+			// 需要去给数组借用一个sort方法来排序
+			var arg=[].sort.call(arguments)
+			// console.log(arg[0],arg[1],arg[2])
+			// 1 判断这三条边能不能构成一个三角形  条件：任意两条边的和大于第三边
+			if(a+b>c||a+c>b||b+c>a){
+				// 直角 钝角 锐角
+				if(arg[0]*arg[0]+arg[1]*arg[1]==arg[2]*arg[2]){
+
+					return'是一个直角三角形'
+				}else if(arg[0]*arg[0]+arg[1]*arg[1]<arg[2]*arg[2]){
+					return'钝角三角形'
+				}else{
+					return'锐角三角形'
+				}
+			}else{
+				return'不是一个直角三角形'
+			}
+		}
+		var s=check_triangle(2,4,5)
+		alert(s)
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr=[1,2,3,4,5]
+		var sum=0
+		// for(var i=0;i<arr.length;i++){
+		// 	sum+=arr[i]
+		// }
+		// console.log(sum)
+
+		// reduce  里面传入的函数 第一个参数是  上一次的和
+		// 参数i是b的下标    参数arr2等于arr
+		var sum= arr.reduce(function(a,b,i,arr2){
+			console.log(a,b)
+			return a+b
+		},0)
+		console.log(sum)
+	</script>
+</body>
+</html>

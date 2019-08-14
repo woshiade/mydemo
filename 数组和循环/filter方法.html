@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var students=[
+			{id:1,name:'xiaoming',age:'18',score:60},
+			{id:2,name:'xiaoming',age:'28',score:61},
+			{id:3,name:'xiaoming',age:'38',score:62},
+			{id:4,name:'xiaoming',age:'48',score:63},
+			{id:5,name:'xiaoming',age:'58',score:64}
+		]
+		var num = prompt('请输入学生id')
+		// 过滤方法 filter  返回一个过滤后新数组  过滤规则：循环数组里面的每一项  传入的函数返回true  新数组里面会保留这条记录  如果返回false  就不会保留
+		var new_arr = students.filter(function(value,index,arr){
+			// if(value.id===parseInt(num)){
+			// 	return true
+			// }
+			// return false
+			return value.id===parseInt(num)
+		})
+		console.log(new_arr)
+		// filter  非常常用
+	</script>
+</body>
+</html>

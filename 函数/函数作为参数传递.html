@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//函数作为参数传递
+		// function buy(name,goods,fn){
+		// 	// let fn =function(){
+		// 	// 	alert("shopping finish");
+		// 	// }
+		// 	fn && fn(name,goods)
+		// }
+		// buy('xiaoming','apple',function(name,goods){
+		// 	alert(name+'buy'+goods)
+		// 	alert("shopping finish");
+		// });
+
+		var $={
+			each:function(data,fn){
+				// data = [1,2,3,4]
+				var arr=[]
+				for(var i=0;i<data.length;i++){
+					//数组有多少元素  这个函数就会被执行多少次
+					var res= fn(data[i],i,data)
+					arr.push(res)
+				}
+				return arr
+			}
+		}
+	
+		// --------------------------------
+		var a = $.each([1, 2, 3, 4], function (item, index, arr) {
+		 if (item > 2) {
+		   return item + 1
+		 } else {
+		   return item - 1
+		 }
+		})
+		console.log(a)  // [0, 1, 4, 5]
+	</script>
+</body>
+</html>

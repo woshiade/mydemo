@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var a = 1
+		function fn1(){
+		  function fn3(){
+		    var a = 4
+		    fn2()
+		  }
+		  var a = 2
+		  return fn3
+		}
+		function fn2(){
+		  console.log(a)
+		}
+		// 注意：作用域  一定义时候为准  不要以调用的时候为准
+		var fn = fn1()
+		fn() //输出多少
+		//答案：1
+	</script>
+</body>
+</html>

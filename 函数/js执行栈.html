@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var a = 1
+		function fn1(){
+		  function fn2(){
+		    console.log(a)
+		  }
+		  function fn3(){
+		    var a = 4
+		    fn2()
+		  }
+		  var a = 2
+		  return fn3
+		}
+		var fn = fn1()
+		fn() //输出多少
+		// 答案：2
+	</script>
+</body>
+</html>

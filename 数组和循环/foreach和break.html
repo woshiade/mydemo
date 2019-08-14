@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//有一个数组，每个元素都是10进制的正整数，要求修改这个数组里面的每个元素，把这些元素转成16进制的数
+		// 1
+		var arr=[13,545,99,98]
+		// var new_arr2= arr.map(function(value,index,arr2){
+		// 	// if(index>=1){
+		// 	// 	break;
+		// 	// }
+		// 	console.log(arr2===arr)
+		// 	arr2[index]=value.toString(16)
+		// })
+		// console.log(arr)
+		// console.log(new_arr2)
+
+		// 2  foreach
+		var new_arr1= arr.forEach(function(value,index,arr){
+			// if(index>=1){
+			// 	break;
+			// }
+			arr[index]=value.toString(16)
+		})
+		// 1. foreach  没有返回值  map是有返回值，返回一个新数组  2.map返回新数组里面的元素和每次循环的返回值有关
+		console.log(arr)
+		console.log(new_arr1)
+
+		for(var i=0; i<arr.length;i++){break}
+	</script>
+</body>
+</html>

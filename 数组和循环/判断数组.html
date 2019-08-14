@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//判断数组  有好几种方法
+		var arr=[]
+		//1  instanceof
+		console.log(arr instanceof Array)
+
+		//2  构造函数
+		console.log(arr.constructor===Array)
+
+		// 3  Object.prototype.toString.call(iSl)=="[object String]"  在有些浏览器不支持isArray这种方式的情况下 推荐使用toString方法判断
+		console.log(Object.prototype.toString.call(arr)=="[object Array]")
+
+		// 4  isArray  es5  专门用来判断数组的方法
+		console.log(Array.isArray(arr))
+	</script>
+</body>
+</html>

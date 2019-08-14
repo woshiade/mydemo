@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function add(x){
+			// console.log(x)
+			return function(y){
+				// console.log(y)
+				return function(z){
+					// console.log(z)
+					console.log(x,y,z)
+					return x+y+z
+				}
+			}
+		}
+		//--------------------------------------
+		// add(2)  ===>function(){}
+		// var fn1=add(2)
+		// var fn2=fn1(3)
+		// fn2(4)
+		// fn3 ===>function(){}
+		var a = add(2)(3)(4);
+		console.log(a)  // 9
+	</script>
+</body>
+</html>

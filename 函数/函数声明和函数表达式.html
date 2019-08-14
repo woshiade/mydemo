@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//共四题，如下
+		//1
+		// function foo(){
+		// 	// 函数声明
+		//     function bar() {
+		//         return 3;
+		//     }
+		//     return bar();
+		//     function bar() {
+		//         return 8;
+		//     }
+		// }
+		// alert(foo());  //?
+		// 答案：8
+
+		// 2
+		// function foo(){
+		// 	// var bar =undefined
+		// 	// 函数表达式
+		//     var bar = function() {
+		//         return 3;
+		//     };
+		//     return bar();
+		//     var bar = function() {
+		//         return 8;
+		//     };
+		// }
+		// alert(foo());  //?
+		// 答案：3
+
+		//3
+		// alert(foo());  //?
+		// function foo(){
+		//     var bar = function() {
+		//         return 3;
+		//     };
+		//     return bar();
+		//     var bar = function() {
+		//         return 8;
+		//     };
+		// }
+		// 答案：3
+
+		// 4
+		function foo(){
+			//var bar = undefined
+		    return bar();
+		    var bar = function() {
+		        return 3;
+		    };
+		    var bar = function() {
+		        return 8;
+		    };
+		}
+		alert(foo());  //?
+		// 答案：报错
+	</script>
+</body>
+</html>

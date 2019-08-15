@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//addEventListener 、对象.eventType=fn 、直接绑定到元素身上
+		function listenEvent(obj,eventType,fn){
+			// 1.标准浏览器下 obj.addEventListener(eventType,fn,false)
+			if(obj.addEventListener){
+				// 第三个参数表示是否捕获  false  不捕获（冒泡）
+				obj.addEventListener(eventType,fn,false)
+			
+			}else if(obj.attachEvent){
+				// 2.在ie低版本浏览器  attachEvent
+				obj.attachEvent('on'+eventType,fn)
+			}else{
+				//name = xxxx
+				//obj[name]
+				obj['on'+eventType]=fn
+			}
+		}
+		listenEvent(document,'click',function(){
+			alert('hello world!!!')
+		})
+	</script>
+</body>
+</html>

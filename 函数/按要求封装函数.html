@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//封装一个函数，要求输入字符串转化成数组弹出
+		/*
+		1.定义函数的名字  根据这个函数的功能  见词达意
+		2.函数参数（局部变量）
+		3.看是否需要返回值  如果需要 return  如果不需要  默认可以不写  函数的返回值undefined
+		4.是否需要返回值判断标准：函数的运行结果有没有被第三方调用
+		*/
+
+		// function str2arr(s){
+		// 	// alert(s.split(''))
+		// 	return s.split('')
+		// }
+		// var res= str2arr('1645')
+		// console.log(res.sort())
+
+		// 2.封装一个函数，要求能求出三个数中的最小值，注意：不准使用js内置函数
+		// console.log(Math.min(4,2,1))
+
+		function min(a,b,c){
+			// 1.直接去比较
+			// if(a>b){
+			// 	if(b>c){
+			// 		return c
+			// 	}else{
+			// 		return b
+			// 	}
+			// }else{
+			// 	if(a>c){
+			// 		return c
+			// 	}else{
+			// 		return a
+			// 	}
+			// }
+
+			// 2.arguments  类数组
+			// console.log(arguments)
+			//call  4,8,2 => 2,4,8
+			// console.log([].sort.call(arguments))
+			return [].sort.call(arguments)[0]
+		}
+		console.log(min(4,8,2))
+	</script>
+</body>
+</html>

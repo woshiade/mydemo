@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>1</button>
+	<button>2</button>
+	<button>3</button>
+	<button>4</button>
+	<button>5</button>
+	<button>6</button>
+	<script>
+		//写js实现点击按钮弹出对应button按钮的下标
+		
+		var aBtn=document.getElementsByTagName('button')
+		// for(var i=0;i<aBtn.length;i++){
+			// 1.第一种方法
+			// aBtn[i].index=i
+			// aBtn[i].onclick=function(){
+			// 	// 弹出6  原因：for循环先执行  然后再去点击按钮执行这里的函数（这里弹出i的时候for循环已经执行完了）
+			// 	// alert(i)
+			// 	alert(this.index)
+			// }
+
+			// 2.第二种方法
+			// aBtn[i].onclick=(function(i){
+			// 	return function(){
+			// 		alert(i)
+			// 	}
+			// })(i)
+		// }
+
+		//3. 第三种方法
+		for(let i=0;i<aBtn.length;i++){
+			aBtn[i].onclick=function(){
+				alert(i)
+			}
+		}
+	</script>
+</body>
+</html>

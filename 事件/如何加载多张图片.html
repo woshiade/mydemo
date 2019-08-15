@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var mulitImg = [
+        'http://edu.nodeing.com/files/system/block_picture_1516373242.jpg?version=8.2.14',
+        'http://edu.nodeing.com/files/system/block_picture_1516588307.jpg?version=8.2.14',
+        'http://edu.nodeing.com/files/system/block_picture_1516374079.jpg?version=8.2.14',
+        'http://edu.nodeing.com/files/system/block_picture_1516379328.jpg?version=8.2.14'
+    	]
+
+    	// 如何去加载多张图片
+    	// for(var i=0;i<mulitImg.length;i++){
+    		// var oImg = new Image()
+    		// oImg.src = mulitImg[i]
+    	// 	oImg.title = '这是第'+i+'图片'
+    	// 	oImg.onload=function(){
+    	// 		document.body.appendChild(this)
+    	// 	}
+    	// }
+
+    	// 2.递归的方式加载
+    	function loadImg(imgArr,i){
+    		var oImg=new Image()
+    		oImg.src=imgArr[i]
+    		oImg.title = '这是第'+i+'图片'
+    		oImg.onload=function(){
+    			document.body.appendChild(this)
+    			if(i<imgArr.length){
+    				loadImg(imgArr,i+1)
+    			}
+    		}
+    	}
+    	loadImg(mulitImg,0)
+
+    	// 3.promiss  (es6)  螺钉课堂文档查看：http://book.nodeing.com/es6-guide/chapter8/Promise.html
+	</script>
+</body>
+</html>

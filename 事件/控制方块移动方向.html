@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" tabindex="0"></div>
+	<script>
+		var oBox= document.getElementById('box')
+		// 1.默认情况下  div是没有办法获取到焦点
+		oBox.focus()
+		var x=0;
+		var y=0;
+		// 2.如果一定要在oBox上绑定keyup事件  需要让div获取到焦点，给div加tabindex=0
+		oBox.onkeyup=function(ev){
+			var ev=ev||window.event
+			// 方向键： 上:38  下:40  左:37  右:39
+			// console.log(ev.keyCode)
+			switch(ev.keyCode){
+				case 38:
+					y-=10
+					break
+				case 40:
+					y+=10
+					break
+				case 37:
+					x-=10
+					break
+				case 39:
+					x+=10
+					break			
+			}
+			oBox.style.left = x +'px'
+			oBox.style.top = y +'px'
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 600px;
+			height: 300px;
+			background-color: black;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		var oBox=document.getElementById('box')
+		oBox.onclick=function(ev){
+			var ev=ev||window.event
+			// 1
+			// var x=ev.clientX-oBox.offsetLeft
+			// var y=ev.clientY-oBox.offsetTop
+
+			// 2
+			var x=ev.pageX-oBox.offsetLeft
+			var y=ev.pageY-oBox.offsetTop
+			// console.log(ev.pageY,oBox.offsetTop)
+			console.log(x,y)
+		}
+	</script>
+</body>
+</html>

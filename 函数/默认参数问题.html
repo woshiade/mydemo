@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//es6  可以直接在形参定义的时候给默认值
+		// function fn(a, b=20, c=30) {
+		// 	// console.log(a,b,c)
+		// 	//es5  逻辑运算短路
+		// 	var a=a||10
+		// 	var b=b||20
+		// 	var c=c||30
+		//   return a + b + c
+		// }
+		// // 注意：通常把默认参数放在后面
+		// console.log(fn(30))
+
+		//多参数的情况
+		function fn(settings){
+			var defaultSettings={
+				name:'小李',
+				age:18,
+				couse:'js基础',
+				gender:'男'
+			}
+			var options = Object.assign(defaultSettings,settings)
+			console.log(options)
+			//options.age
+		}
+		fn({
+			name:'小红',
+			age:20
+		})
+	</script>
+</body>
+</html>

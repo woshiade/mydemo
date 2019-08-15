@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//封装一个通用的取消事件绑定函数stopListening
+		function stopListening(obj,eventType,fn){
+			// 1.obj.removeEventListener(eventType,fn,false)
+			if(obj.removeEventListener){
+				obj.removeEventListener(eventType,fn,false)
+			}else if(obj.detachEvent){
+				// 2.detachEvent
+				obj.detachEvent('on'+eventType,fn)
+			}else{
+				// 3.obj.eventType = null
+				obj['on'+eventType]=null
+			}		
+		}
+
+		document.addEventListener('click',function fn1(){
+			alert('hello!!!')
+			// 删除事件绑定
+			stopListening(document,'click',fn1)
+		},false)
+	</script>
+</body>
+</html>

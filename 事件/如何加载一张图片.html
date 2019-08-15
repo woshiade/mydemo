@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var imgsrc = 'http://edu.nodeing.com/files/system/block_picture_1516379328.jpg?version=8.2.14'
+		// 创建一个img对象
+		var oImg=new Image()
+		console.log(oImg)
+		oImg.src=imgsrc
+		// 图片加载成功以后，做一些事情
+		oImg.onload=function(){
+			document.body.appendChild(this)
+		}
+	</script>
+</body>
+</html>

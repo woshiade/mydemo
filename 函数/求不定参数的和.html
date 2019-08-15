@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//封装一个函数，求参数的和，注意：参数不固定
+		// function argsum(){
+		// 	// 1
+		// 	//类数组
+		// 	// console.log(arguments)
+		// 	// var sum = 0
+		// 	// for(var i=0;i<arguments.length;i++){
+		// 	// 	sum+=arguments[i]
+		// 	// }
+		// 	// return sum
+
+		// 	// 2
+		// 	return [].reduce.call(arguments,function(sum,value){
+		// 		return sum+value
+		// 	},0)
+		// }
+		// console.log(argsum(10,20,30))
+
+		// 3  es6
+		let argsum = (...rest) =>{
+			// console.log(rest)
+			return rest.reduce((sum,value)=>sum+value)
+		}
+		console.log(argsum(39,11,22))
+		// es6  js基础  js面向对象
+	</script>
+</body>
+</html>

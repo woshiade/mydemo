@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<script>
+		function cancelPropagation(ev){
+			// 阻止事件冒泡
+			// 标准：stopPropagation()
+			// 低版本ie：ev.cancelBubble=true
+			if(ev.stopPropagation){
+				ev.stopPropagation()
+			}else{
+				ev.cancelBubble=true
+			}
+		}
+		var oBtn = document.getElementById('btn')
+		document.onclick=function(){
+			alert("document")
+		}
+		oBtn.onclick=function(ev){
+			var ev=ev||window.event
+			alert('btn')
+			cancelPropagation(ev)
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function identify () {
+		  return this.name.toUpperCase()
+		}
+
+		function speek () {
+		  var greeting = 'hello, 我是' + identify.call(this)
+		  console.log(greeting)
+		}
+
+		var p1 = {
+		  name: 'xiaoHong'
+		}
+		var p2 = {
+		  name: 'XiaoLi'
+		}
+		// identify.call(p1)    // 输出？   答案：XIAOHONG
+		// identify.call(p2)   // 输出？  答案：XIAOLI
+		// speek.call(p1)      // 输出？  答案：hello, 我是XIAOHONG
+		// speek.call(p2)      // 输出？  答案：hello, 我是XIAOLI
+		//为什么要有this？  如果没有this  你需要显示的去传递一个参数  
+	</script>
+</body>
+</html>

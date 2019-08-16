@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var p1={
+			name:'小强',
+			age:20,
+			showName:function(){
+				alert(this.name)
+			},
+			goHome:function(name,age){
+				alert(this.name+'带一个年龄'+age+'名字叫做'+name+'回家了')
+			}
+		}
+		
+		var p2={
+			name:'小红',
+			age:18,
+			showAge:function(){
+				alert(this.age)
+			}
+		}
+		
+		// p2 也想弹出一个名字，但没有showName方法  可以去向p1借showName方法
+		// p1的showName方法借给p2去使用 
+		// p1.showName.call(p2)
+
+		// p2的showAge方法借给p1使用
+		// p2.showAge.call(p1)
+
+		// p1.goHome.call(p2,'小强',20)
+		// apply 和 call功能一样的 区别就是apply后面的参数是一个数组
+		// 共同点  都可以去更改this指向
+		p1.goHome.apply(p2,['小强',20])
+	</script>
+</body>
+</html>

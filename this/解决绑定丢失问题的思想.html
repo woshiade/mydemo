@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			显示绑定
+			隐式绑定（和显示绑定对应的形式）： 对象.方法()  方法内部的this会自动绑定到对象身上
+		*/
+
+		// function foo () {
+		//   console.log(this.a)
+		// }
+		// var obj = {
+		//   a: 2
+		// }
+		// foo.call(obj)  //输出多少？  2
+
+
+		// function foo () {
+		//   console.log(this.a)
+		// }
+		// var obj = {
+		//   a: 2,
+		//   foo: foo
+		// }
+		// /*
+		// 	obj.foo  没有加()去调用  foo内部的this不会指向obj  这种情况就称之为绑定丢失
+		// */
+		// var bar = function(){
+		// 	obj.foo()
+		// }
+		// var a = '我是全局属性a'
+		// bar()  //输出？
+		// // 如果直接使用call这种形式  不能很好的去解决丢失的问题
+		// // 会使用一种call的变种形式  直接在外层给这个套一个函数
+		// setTimeout(bar,100)
+
+
+		function foo () {
+		  console.log(this.a)
+		}
+		function doFoo (fn) {
+		  fn()
+		}
+		var obj = {
+		  a: 2,
+		  foo: foo
+		}
+		var a = '我是全局变量a'
+		doFoo(function(){
+			obj.foo()
+		})  //输出？
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn1">打开</button>
+	<button id="btn2">关闭</button>
+	<button id="btn3">打开到指定的位置</button>
+	<script>
+		var oBtn1=document.getElementById('btn1')
+		var oBtn2=document.getElementById('btn2')
+		var oBtn3=document.getElementById('btn3')
+		var newWindow
+		// 打开
+		oBtn1.onclick=function(){
+			//window.open
+			newWindow= window.open('http://edu.nodeing.com')
+		}
+		// 关闭
+		oBtn2.onclick=function(){
+			newWindow.close()
+		}
+		// 打开到指定的位置
+		oBtn3.onclick=function(){
+			//window.open  (只不过在打开（网址）后面添加一些属性)
+			// 第一个参数是网址，第二个参数是名字，第三个参数是功能
+			newWindow= window.open('http://edu.nodeing.com','nw','width=300,height=300,top=200,left=200')
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="forward.html">forward</a>
+	<button id="btn">前进</button>
+	<img src="img/7.jpg" width="300" alt="">
+	<!-- 图片在自己电脑上找和合适的图片，这个地址是本机的 -->
+	<script>
+		var oBtn=document.getElementById('btn')
+		oBtn.onclick=function(){
+			// window.history.forward()
+			window.history.go(1)
+		}
+		window.onresize=function(){
+			var cW=document.documentElement.clientWidth/1200
+			document.getElementsByTagName('img')[0].style.width=300*cW+'px'
+		}
+	</script>
+</body>
+</html>

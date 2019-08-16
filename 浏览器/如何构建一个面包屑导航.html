@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		console.log(window.location)
+		// 拼接首页地址
+		var mainpath = window.location.protocol+'//'+window.location.host+'/'
+		console.log(mainpath)
+		var item=window.location.pathname.substr(4).split('/')
+		console.log(item)
+		var str='<a href="'+mainpath+'">首页</a>'
+		for(var i=0;i<item.length;i++){
+			// http://localhost:xxx/practice
+			mainpath+=item[i]
+			if(i<item.length-1){
+				mainpath+="/"
+			}
+			str='<a href="'+mainpath+'">'+item[i]+'</a>'
+		}
+		document.write(str)
+	</script>
+</body>
+</html>

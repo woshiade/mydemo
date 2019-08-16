@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// function foo () {
+		//   console.log(this.a)
+		// }
+		// var obj = {
+		//   a: 2,
+		//   foo: foo
+		// }
+		// // 关注：谁去调用它  被谁调用通常会指向这个对象
+		// obj.foo()  // 输出？   2
+
+		function foo () {
+		  console.log(this.a)
+		}
+		var obj2 = {
+		  a: 42,
+		  foo: foo
+		}
+		var obj1 = {
+		  a: 2,
+		  obj2: obj2
+		}
+		obj1.obj2.foo() //输出？  42
+
+		// 总结：对象.foo()  在这个函数内部指向的就是这个对象 （隐式绑定）
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<li>nodeing.com <button id="btn">x</button></li>
+	<script>
+		var oBtn=document.getElementById('btn')
+		oBtn.onclick=function(){
+			// console.log(window)
+			var del=confirm('确认删除吗？')
+			// alert(del)
+			if(del){
+				this.parentNode.remove()
+			}
+		}
+	</script>
+</body>
+</html>

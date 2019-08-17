@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//总结
+		// 第一步  看是不是new去调用一个函数  如果是就指向new创建出来的对象
+		// 第二步  看是不是通过 call  apply  bind 去绑定 foo.call(obj) 如果是就指向传入这几个方法的对象
+		// 第三步  obj.foo() 谁去调用这个函数就指向谁
+		// 第四步  默认绑定形式  window  如果在严格模式下，绑定到 undefined
+		// 注意：箭头函数没有自己this  指向是外部环境的对象
+	</script>
+</body>
+</html>

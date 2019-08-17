@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function User(name) {
+			// 局部变量  私有变量
+		    var name1 = name;  
+		    this.name2 = name; 
+		    //局部函数  私有的方法
+		    function getName1() {  
+		        return name1;
+		    }
+		}
+		//公共方法
+		User.prototype.getName2 = function() { 
+		    return this.name2;
+		}
+		// 静态属性和静态方法  不需要去实例化就可以直接通过函数.属性/方法的这个形式使用
+		User.name3 = 'xiaohong'; 
+		User.getName3 = function() { 
+		    return this.name2;
+		}
+		var p1 = new User('xiaoqiang');
+		// 静态方法举例：isArray判断是不是一个数组
+		// Array.isArray()
+
+		// name1和getName1  私有的方法和属性
+		// console.log(p1.name1)    //undefined
+		// console.log(p1.getName1())   //报错
+
+		// name3和getName3  是静态方法
+		// console.log(p1.name3)   // undefined
+		// console.log(p1.getName3())   //报错
+
+		// name2和getName2 是公共方法
+		// console.log(p1.name2)   //xiaoqiang
+		// console.log(p1.getName2)   //	function() { return this.name2;} 	
+
+		// console.log(User.getName3())  //undefined
+
+		console.log(User.name1)   //undefined
+		console.log(User.getName1())  //报错
+
+		// 总结： 1.私有方法/属性   只能在内部调用
+		//		  2.公共方法/属性  实例化对象去调用
+		//		  3.静态方法/属性	  直接去调用  不需要实例化 
+	</script>
+</body>
+</html>

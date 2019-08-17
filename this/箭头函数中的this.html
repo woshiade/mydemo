@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// function foo () {
+		// 	// 下面返回的箭头函数中的this是指向foo内部的this --> obj1
+		//   return (a) => {
+		//     console.log(this.a)
+		//   }
+		// } 
+
+
+		// function foo(){
+		// 	return function(){
+		// 		console.log(this.a)
+		// 	}
+		// }
+
+		// var obj1 = {
+		//   a: 2
+		// }
+		// var obj2 = {
+		//   a: 3
+		// }
+		// // 箭头函数没有自己的this  在它里面使用的this是外部环境
+		// var bar = foo.call(obj1)
+		// bar.call(obj2)  //输出多少？  2
+
+
+		function foo() {
+		  setTimeout(() => {
+		    console.log(this.a)
+		  }, 100)
+		}
+		var obj = {
+		  a: 2
+		}
+		foo.call(obj)  //输出多少？  2
+	</script>
+</body>
+</html>

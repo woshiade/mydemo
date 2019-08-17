@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//关于this指向的总结
+		// 1.在非严格模式下，this是指向window，在函数内部使用了严格模式，指向undefind
+		// 2.隐示绑定，谁调用它，它就显示谁  obj.foo()  在foo内部就指向obj
+		// 3.显示绑定  call  apply  硬绑定  bind
+		// 4. new 绑定  当new去调用一个构造函数，这个构造函数内部的this指向的是新创建的对象
+
+		function foo (a) {
+		  this.a = a
+		}
+		var bar = new foo(2)
+		console.log(bar.a) //输出多少？
+	</script>
+</body>
+</html>

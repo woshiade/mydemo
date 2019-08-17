@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Foo() {
+			// 函数表达式
+		    getName = function () { alert (1); };
+		    return this;
+		}
+		// 静态的方法
+		Foo.getName = function () { alert (2);};
+		// 公共的方法
+		Foo.prototype.getName = function () { alert (3);};
+		//函数表达式
+		var getName = function () { alert (4);};
+		//函数声明
+		function getName() { alert (5);}
+
+		// console.log(Foo.getName())  // undefined
+
+		getName();
+		// 1.js预解析  var function  -->  仓库  getName(){alert(5)}
+		//2.正式运行
+	</script>
+</body>
+</html>

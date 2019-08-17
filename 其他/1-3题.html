@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// var name = 'World!';
+		// (function () {
+		//     if (typeof name === 'undefined') {
+		//         var name = 'Nodeing';
+		//         console.log('Goodbye ' + name);
+		//     } else {
+		//         console.log('Hello ' + name);
+		//     }
+		// })();
+
+		// 输出结果  选A
+
+		/*
+		A: Goodbye Nodeing   
+
+		B: Hello Nodeing
+
+		C: Hello undefined
+
+		D: Hello World
+		*/
+
+		//----------------------------------- 
+
+		// ["1", "2", "3"].map(parseInt)
+
+		/*
+		//输出结果    1 NaN NaN   选D
+		A：["1", "2", "3"]
+
+		B：[1, 2, 3]
+
+		C：[0, 1, 2]
+
+		D：other
+		*/
+
+		//----------------------------------
+		var val = 'nodeing';
+		// console.log('Value is ' + (val === 'nodeing'))
+		console.log('Value is ' + (val === 'nodeing') ? 'Something' : 'Nothing');
+
+		/*
+		// 输出结果  Something  选D
+		A: Value is Something
+
+		B: Value is Nothing
+
+		C: NaN
+
+		D: other
+		*/
+	</script>
+</body>
+</html>

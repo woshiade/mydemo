@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// function showCase(value) {
+		//     switch(value) {
+		//     case 'A':
+		//         console.log('Case A');
+		//         break;
+		//     case 'B':
+		//         console.log('Case B');
+		//         break;
+		//     case undefined:
+		//         console.log('undefined');
+		//         break;
+		//     default:
+		//         console.log('Do not know!');
+		//     }
+		// }
+		// showCase(new String('A'));
+
+		/*
+		// 选项    选C
+		A: Case A
+
+		B: Case B
+
+		C: Do not know!
+
+		D: undefined
+		*/
+
+		// -----------------------------------------
+
+		// function showCase(value) {
+		//     switch(value) {
+		//     case 'A':
+		//         console.log('Case A');
+		//         break;
+		//     case 'B':
+		//         console.log('Case B');
+		//         break;
+		//     case undefined:
+		//         console.log('undefined');
+		//         break;
+		//     default:
+		//         console.log('Do not know!');
+		//     }
+		// }
+		// showCase(String('A'));
+
+		/*
+		//选项   选A
+		A: Case A
+
+		B: Case B
+
+		C: Do not know!
+
+		D: undefined
+		*/
+
+		//----------------------------------
+
+		var a = [0];
+		if ([0]) {   //  [] 空数组转换成布尔类型  false
+		  console.log(a == true);  //  [0] 先转换成数字  0=true --> false
+		} else { 
+		  console.log("wut");
+		}
+
+		/*
+		// 选项  选B
+		A: true
+
+		B: false
+
+		C: "wut"
+
+		D: other
+		*/
+	</script>
+</body>
+</html>

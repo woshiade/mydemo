@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function foo (something) {
+			// something  --> 3  this.a -->2
+		  console.log(this.a, something)
+		  return this.a + something
+		}
+		var obj = {
+		  a: 2
+		}
+		var bar = function () {
+			// arguments  [3]
+			// apply 修改了this的指向
+		  return foo.apply(obj, arguments)
+		}
+		var b = bar(3)  //输出多少？  b = foo.apply(obj,arguments)
+		console.log(b)  //输出多少？  5
+		// setTimeout(bar(4),100)   硬绑定
+	</script>
+</body>
+</html>
